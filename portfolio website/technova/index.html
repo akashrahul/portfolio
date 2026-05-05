@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TechNova Solutions</title>
+  <link rel="stylesheet" href="style.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+
+<body>
+
+    <!-- navbar -->
+  <header class="header">
+  <div class="nav-container">
+    <div class="logo">TechNova</div>
+
+    <div class="menu-toggle" id="menu-toggle">
+      ☰
+    </div>
+
+    <nav class="nav-links" id="nav-links">
+      <a href="#services">Services</a>
+      <a href="#why-us">Why Us</a>
+      <a href="#process">Process</a>
+      <a href="#cta" class="nav-btn">Contact us</a>
+    </nav>
+  </div>
+</header>
+
+
+
+  <!-- Hero Section -->
+  <section class="hero">
+  <div class="hero-content">
+    <h2>Modern Websites That Grow Your Business</h2>
+    <p>
+      We help startups and small businesses build fast, responsive,
+      and professional websites that convert visitors into customers.
+    </p>
+    <div class="hero-buttons">
+      <button class="primary-btn">Get a Free Quote</button>
+      <button class="secondary-btn">View Services</button>
+    </div>
+  </div>
+</section>
+
+<!-- trust section -->
+<section class="trust reveal" id="trust">
+  <p>Trusted by startups and growing businesses</p>
+  <div class="trust-logos">
+    <span>Startup</span>
+    <span>Business</span>
+    <span>Agency</span>
+    <span>Brand</span>
+  </div>
+</section>
+
+  <!-- Services -->
+  <section class="services reveal" id="services">
+  <h3>Our Services</h3>
+  <p class="section-subtitle">
+    We provide end-to-end frontend solutions for your business.
+  </p>
+
+  <div class="service-grid">
+    <div class="service-card">
+      <h4>Website Design</h4>
+      <p>
+        Clean, modern, and user-friendly website designs
+        tailored for your brand.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h4>Frontend Development</h4>
+      <p>
+        Fast and responsive websites using HTML, CSS,
+        JavaScript, and React.
+      </p>
+    </div>
+
+    <div class="service-card">
+      <h4>Website Maintenance</h4>
+      <p>
+        Ongoing support, updates, and bug fixes
+        to keep your site running smoothly.
+      </p>
+    </div>
+  </div>
+</section>
+
+<!-- why choose us -->
+<section class="why-us reveal" id="why-us">
+  <h3>Why Choose TechNova?</h3>
+
+  <div class="why-grid">
+    <div>
+      <h4>Modern Design</h4>
+      <p>We follow modern UI/UX principles for clean layouts.</p>
+    </div>
+
+    <div>
+      <h4>Responsive Layout</h4>
+      <p>Your website will look great on all devices.</p>
+    </div>
+
+    <div>
+      <h4>Fast Delivery</h4>
+      <p>Quick turnaround time without compromising quality.</p>
+    </div>
+  </div>
+</section>
+
+<!-- process section -->
+<section class="process reveal" id="process">
+  <h3>Our Process</h3>
+
+  <div class="process-steps">
+    <div class="step">
+      <span>01</span>
+      <p>Understanding your requirements</p>
+    </div>
+
+    <div class="step">
+      <span>02</span>
+      <p>Design & development</p>
+    </div>
+
+    <div class="step">
+      <span>03</span>
+      <p>Testing & final delivery</p>
+    </div>
+  </div>
+</section>
+
+<!-- call to action -->
+<section class="cta reveal" id="cta">
+  <h3>Ready to Build Your Website?</h3>
+  <p>Let’s discuss your project and bring your ideas to life.</p>
+  <button class="primary-btn">Contact Us</button>
+</section>
+
+<!-- footer -->
+  <footer class="footer">
+  <h4>TechNova Solutions</h4>
+  <p>Building modern websites for growing businesses.</p>
+  <p>© 2026 All rights reserved.</p>
+</footer>
+
+
+<!-- tiny js for (responsive) -->
+<script>
+  const menuToggle = document.getElementById("menu-toggle");
+  const navLinks = document.getElementById("nav-links");
+
+  menuToggle.addEventListener("click", () => {
+    navLinks.classList.toggle("active");
+  });
+</script>
+
+<script>
+  const reveals = document.querySelectorAll(".reveal");
+
+  window.addEventListener("scroll", () => {
+    reveals.forEach(section => {
+      const top = section.getBoundingClientRect().top;
+      const trigger = window.innerHeight - 100;
+
+      if (top < trigger) {
+        section.classList.add("active");
+      }
+    });
+  });
+</script>
+
+
+</body>
+</html>

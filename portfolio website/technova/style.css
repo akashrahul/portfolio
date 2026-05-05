@@ -1,0 +1,290 @@
+:root {
+  --primary: #1fb6ff;      /* Miami Blue */
+  --secondary: #ffffff;   /* White */
+  --accent: #ff7a59;      /* Coral */
+  --dark: #0f172a;        /* Dark text */
+  --gray: #64748b;        /* Soft gray */
+  --light-bg: #f8fafc;    /* Light background */
+}
+
+body {
+  font-family: 'Poppins', sans-serif;
+  color: var(--dark);
+  background: var(--secondary);
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* polish (fade + slide) */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: all 0.8s ease;
+}
+
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+
+/* navbar */
+
+/* HEADER */
+.header {
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.9);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(0,0,0,0.05);
+}
+
+/* NAV CONTAINER */
+.nav-container {
+  max-width: 1200px;
+  margin: auto;
+  padding: 18px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* LOGO */
+.logo {
+  font-size: 1.5rem;
+  font-weight: 700;
+  color: var(--primary);
+}
+
+/* LINKS */
+.nav-links a {
+  margin-left: 30px;
+  text-decoration: none;
+  color: var(--dark);
+  font-weight: 500;
+  transition: color 0.3s;
+}
+
+.nav-links a:hover {
+  color: var(--primary);
+}
+
+
+/* CONTACT BUTTON */
+.primary-btn,
+.nav-btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.primary-btn:hover,
+.nav-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0,0,0,0.2);
+}
+
+
+.menu-toggle {
+  display: none;
+  font-size: 1.8rem;
+  cursor: pointer;
+  color: var(--dark);
+}
+
+/* responsive nav sec */
+/* MOBILE NAV */
+@media (max-width: 768px) {
+  .menu-toggle {
+    display: block;
+  }
+
+  .nav-links {
+    position: absolute;
+    top: 70px;
+    left: 0;
+    width: 100%;
+    background: #fff;
+    flex-direction: column;
+    align-items: center;
+    display: none;
+    padding: 30px 0;
+  }
+
+  .nav-links a {
+    margin: 15px 0;
+    font-size: 1.1rem;
+  }
+
+  .nav-links.active {
+    display: flex;
+  }
+}
+
+
+
+/* hero section */
+.hero {
+  min-height: 90vh;
+  background: 
+    linear-gradient(rgba(15, 23, 42, 0.6), rgba(15, 23, 42, 0.6)),
+    url("images/hero2.jpg") center/cover no-repeat;
+  
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 0 20px;
+}
+
+.hero {
+  padding-top: 90px;
+}
+
+
+.hero-content {
+  max-width: 800px;
+  color: #fff;
+}
+
+.hero h2 {
+  font-size: 3rem;
+  font-weight: 700;
+}
+
+.hero p {
+  margin-top: 15px;
+  font-size: 1.1rem;
+  color: #e5e7eb;
+}
+
+/* responsive hero sec */
+@media (max-width: 768px) {
+  .hero h2 {
+    font-size: 2.2rem;
+  }
+
+  .hero p {
+    font-size: 1rem;
+  }
+
+  .hero-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+  }
+
+  .secondary-btn {
+    margin-left: 0;
+  }
+}
+
+
+/* button agency style */
+.primary-btn {
+  background: var(--primary);
+  color: #fff;
+  padding: 14px 28px;
+  border-radius: 30px;
+  border: none;
+  font-weight: 500;
+  cursor: pointer;
+  transition: 0.3s;
+}
+
+.primary-btn:hover {
+  background: var(--accent);
+}
+
+.secondary-btn {
+  background: transparent;
+  color: #fff;
+  border: 2px solid #fff;
+  padding: 12px 26px;
+  border-radius: 30px;
+  margin-left: 15px;
+  cursor: pointer;
+}
+
+/* service section */
+.services {
+  background: var(--light-bg);
+  padding: 80px 20px;
+  text-align: center;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 30px;
+  margin-top: 50px;
+}
+
+.service-card {
+  transition: transform 0.4s ease, box-shadow 0.4s ease;
+}
+
+.service-card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 20px 40px rgba(0,0,0,0.12);
+}
+
+
+/* responsive service sec */
+@media (max-width: 768px) {
+  .services,
+  .why-us,
+  .process,
+  .trust,
+  .cta {
+    padding: 60px 20px;
+  }
+
+  .service-card {
+    padding: 25px;
+  }
+}
+
+
+/* trust, why us, process sections */
+.trust,
+.why-us,
+.process {
+  padding: 70px 20px;
+  text-align: center;
+}
+
+.trust-logos span {
+  display: inline-block;
+  margin: 15px;
+  color: var(--gray);
+  font-weight: 500;
+}
+
+/* cta section */
+.cta {
+  background: linear-gradient(135deg, var(--primary), var(--accent));
+  color: #fff;
+  padding: 80px 20px;
+  text-align: center;
+}
+
+/* Footer */
+.footer {
+  background: var(--dark);
+  color: #cbd5f5;
+  padding: 40px 20px;
+  text-align: center;
+}
+
+
+/* responsive footer */
+@media (max-width: 600px) {
+  .footer {
+    font-size: 0.9rem;
+  }
+}
+
